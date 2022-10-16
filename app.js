@@ -51,3 +51,35 @@ function userinfo(user){
 }
 
 userinfo(user)
+
+const collections = [
+    {},
+    15,
+    "hello@test.pl",
+    null,
+    ['aaa', 'bbb', 5],
+    'admin@gmail.com',
+    undefined,
+    'a34@yahoo.com',
+    '321@a',
+    '321.pl'
+];
+
+function getMails(collection) {
+    const reg = new RegExp(/^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/, "gm");
+
+    collection = collections;
+
+    let mails = [];
+
+    for (const Element of collection) {
+        if (reg.test(Element)){
+            mails.push(Element)
+        }
+    }
+    mails.sort()
+    console.log(mails)
+}
+
+getMails(collections)
+
