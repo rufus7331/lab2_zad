@@ -46,6 +46,8 @@ function userinfo(user){
     console.log('Imie: '+user.name)
     console.log('Nazwisko: '+user.surname)
     console.log('średnia ważona: '+srednia_wazona)
+
+    console.log(_.find(user.allGrades, {weight: 1}))
 }
 
 userinfo(user)
